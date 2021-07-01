@@ -9,17 +9,13 @@
       <h1><a href="">Django İle Blog Tutrial</a></h1>
     </div>
 
-    <div>
-      <p>published: 01.07.2021 11:00</p>
-      <h2><a href="">İlk Djangom</a></h2>
-      <p>Bişeyler bişey bişey ..... </p>
-    </div>
-
-    <div>
-      <p>published: 01.07.2021 11:03</p>
-      <h2><a href="">İkinci gönderi</a></h2>
-      <p>Bişeyler2 bişey2 bişey2 ..... </p>
-    </div>
+    {% for post in posts %}
+      <div>
+        <p>published: {{ post.yayinlanma_tarihi }}</p>
+        <h1><a href="">{{ post.baslik }}</a></h1>
+        <p>{{ post.yazi|linebreaks }}</p>
+      </div>
+    {% endfor %}
 
   </body>
 
